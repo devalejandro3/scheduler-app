@@ -17,13 +17,13 @@
 			<div class="header_inner">
 				
 				<div><?php $this->load->view( $header ) ?></div>
-				<div style="text-align:right;"><div>Welcome : <?php echo $row ?></div><a href="/scheduler-app">	 Logout</a></div>
+				<div style="text-align:right;"><div>Welcome : Alejandro > Alain III></div><a href="/scheduler-app">	 Logout</a></div>
 				
 			</div>
 		</div>
 
 		<div class="menu_bar">
-			<div>HOME | MENU2 | MENU3 </div>
+			<div>HOME | MENU2 | <a href="#">Department Maintenance</a> </div>
 		</div>
 
 		<div class='content'> 

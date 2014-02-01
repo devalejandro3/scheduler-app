@@ -1,4 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+session_start();
+
 
 class Default_Controller extends CI_Controller {
 
@@ -7,7 +9,18 @@ class Default_Controller extends CI_Controller {
 	var $color;
 
 	function Default_Controller() {
-       parent::__construct();       
+       parent::__construct();    
+
+   }
+
+   function logout(){
+   		
+  			unset($_SESSION['username']);
+  			unset($_SESSION['fullname']);
+
+  			$data['header'] = "layout/view_header";
+		
+		$this->load->view('v_Main', $data);
    }
 
    function insertValues(){
@@ -23,10 +36,17 @@ class Default_Controller extends CI_Controller {
    			"fullname"=>$fullname);
 
    		$this->m_get_db->insertUsers($newRow);
-   		echo "it has been added. <a href='http://localhost/scheduler-app/index.php/Default_Controller/homePage'>Return</a>";
+   		echo "it has been added. <a href='http://localhost:86/scheduler-app/index.php/Default_Controller/homePage'>Return</a>";
    }
 
    function homePage(){
+
+   		
+   		
+
+
+
+
    		$data['title'] = 'Main View Title';
 		$data['name'] = $this->name;
 		$data['color'] = $this->color;
@@ -42,8 +62,25 @@ class Default_Controller extends CI_Controller {
 		$data['listOfUsers'] = $this->function2();
 
 
-		if($this->getUsers($u, $p ) != null){
-			$data['row'] = $this->getUsers($u, $p );
+		if($this->getUsers($u, $p ) != null || isset($_SESSION['username'])){
+
+
+
+
+			if(isset($_SESSION['username'])){
+				$u  = $_SESSION['username'];
+				$f  = $_SESSION['fullname'];
+
+				
+			} else {
+				$data['row'] = $this->getUsers($u, $p );
+				$_SESSION['username']= $u;
+				$_SESSION['fullname']=$data['row'];
+			}
+			
+
+			
+
 			
 			$this->load->view('v_Main2', $data);
 		} else {
@@ -73,6 +110,8 @@ class Default_Controller extends CI_Controller {
 
 
 	public function index(){
+
+
 
 		$data['title'] = 'Main View Title';
 		$data['name'] = $this->name;
