@@ -90,17 +90,10 @@ class Default_Controller extends CI_Controller {
 		
 
 		// how to determine if row is empty
-
-
-
-
-	
-
-
-		
    }
 
-   function getUsers($u, $p){
+   function getUsers($u, $p)
+   {
    		$this->load->model('m_get_db');
    		return $this->m_get_db->getAll($u, $p);
    }
@@ -131,11 +124,29 @@ class Default_Controller extends CI_Controller {
 
 	
 
-	function function1(){
-		echo "Success";
-		//PHP HERE
-		exit();
+	function UpdateMaintenance(){
+		 $this->load->model("m_get_db");
+		
+	  //$this->m_get_db->editUsers($data);
 
+		$userNames 	= @$_POST['txtUsername'];
+		$fname 		= @$_POST['txtFullname'];
+		$pass 		= @$_POST['txtPassword'];
+		$hiddenID	= @$_POST['UserID'];
+
+
+
+		 $newRow = array(
+
+		 "username" => $userNames,
+		 "fullname" => $fname,
+		 "password" => $pass
+		 );
+
+		 $this->m_get_db->editUsers($newRow,$hiddenID);
+
+		
+		 
 	}
 
 	function function2(){
@@ -146,7 +157,13 @@ class Default_Controller extends CI_Controller {
 			
 			foreach($result as $test){
 				
-				$xxx .="<tr class = 'lvwUserMaintenance' id = ".$test->id." name= ".$test->id."><input type='text' name='idrow".$test->id."' id='idrow".$test->id."' value = ".$test->username."> <td >" . $test->id ."</td> <td>". $test->username ."</td> <td>" .$test->fullname ."</tr>";
+				$xxx .="<tr>
+				<input type='hidden' name='a".$test->id."' id='a".$test->id."' value = ".$test->username.">
+				<input type='hidden' name='f".$test->id."' id='f".$test->id."' value = ".$test->fullname.">
+				<td  class = 'lvwUserMaintenance' id = ".$test->id." name= ".$test->id.">" . $test->id 
+				."</td> <td  class = 'lvwUserMaintenance' id = ".$test->id." name= ".$test->id.">". $test->username 
+				."</td> <td  class = 'lvwUserMaintenance' id = ".$test->id." name= ".$test->id.">" .$test->fullname ." </td> 
+				<td><input type='button' value='Delete' class='delUser' id=".$test->id."></td></tr>";
 
 			}	
 
@@ -156,7 +173,24 @@ class Default_Controller extends CI_Controller {
 	}
 
 
+	function deleteUser() {
+		$this->load->model("m_get_db");
+		
+		$hiddenID	= @$_POST['UserID'];
+
+
+
+		 $newRow = array(
+		 "ISDELETED" => "Y"
+		 );
+
+		 $this->m_get_db->deleteUser($newRow,$hiddenID);
+
+		 return $this->m_get_db->deleteUser($newRow,$hiddenID);;
+	}
+
+
 }
 
 /* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* Location: ./application/controllers/welcome.php */ 

@@ -11,7 +11,9 @@
 		<script  src="/scheduler-app/resources/javascript/login.js"></script>
 		<script></script>
 	</head>
-	<body>
+	<body>	
+
+		<input type='hidden' value='/scheduler-app/index.php/Default_Controller/UpdateMaintenance' id='hiddenEdit'/>
 
 		<div id="header">
 			<div class="header_inner">
@@ -33,45 +35,52 @@
 				<div class='maintenance_header'>
 					<h4>User Maintenance</h4>
 				</div>
+				<form action="/scheduler-app/index.php/Default_Controller/insertValues"  method="POST" id="Data">
+					<div class='maintenance'>
 
-				<div class='maintenance'>
+						
 
-					<form action="/scheduler-app/index.php/Default_Controller/insertValues"  method="POST" id="Data">
+							<div >
+								<label for='txtUsername'>Username :</label> <input id='txtUsername' type='text' name='txtUsername'/>
+								<input id='UserID' type='text' value='' name='UserID'/>
+							</div>
 
-						<div >
-							<label for='txtUsername'>Username :</label> <input id='txtUsername' type='text' name='txtUsername'/>
-						</div>
+							<div >
+								<label for='txtPassword'>Password : </label>
+								<input id='txtPassword' type="password" name="txtPassword"/>
+							</div>
 
-						<div >
-							<label for='txtPassword'>Password : </label>
-							<input id='txtPassword' type="password" name="txtPassword"/>
-						</div>
+							<div>
+								<label for='txtPassword2'>Verify Password : </label>
+								<input id='txtPassword2' type="password" />
+							</div>
 
-						<div>
-							<label for='txtPassword2'>Verify Password : </label>
-							<input id='txtPassword2' type="password" />
-						</div>
-
-						<div >
-							<label for='txtFullname'>Fullname :</label> 
-							<input id='txtFullname' type="text" name="txtFullname"/>
-						</div>
-						<div><input type="submit" value="Save"/>
-							<input id='btnEdit' type="button" value="Edit"/>
-							<input type="button" value="Close"/>
-						</div>
-
+							<div >
+								<label for='txtFullname'>Fullname :</label> 
+								<input id='txtFullname' type="text" name="txtFullname"/>
+							</div>
+							<div><input type="submit" value="Save"/>
+								<input id='btnEdit' type="button" value="Edit"/>
+								<input type="button" value="Close"/>
+							</div>
 
 
+
+						
+					</div>
+					<div>
+						<table border=1 style="width:441px;">
+							<tr><th>Id</th><th>Username</th><th>Fullname</th><th></th></tr>
+							<?php echo $listOfUsers; ?>
+						</table>
+
+						<script>
+
+						</script>
 					
-				</div>
-				<div>
-					<table border=1>
-						<?php echo $listOfUsers; ?>
-					</table>
-					</form>
+					</div>
+				</form>
 
-				</div>
 			</div>		
 
 		</div>
