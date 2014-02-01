@@ -6,6 +6,7 @@
 		<title> <?php echo $title ?> </title>
 	
 		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/myStyles.css"/>
+		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/login.css"/>
 		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.js"></script>
 		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.min.js"></script>
 		<script  src="/scheduler-app/resources/javascript/login.js"></script>
@@ -23,8 +24,10 @@
 				
 				<div class="content_inner div_login">
 
-					<div><h4>Login Page</h4></div>
-					<div>
+					<div class='login_header'>
+						<h4>Login Page</h4>
+					</div>
+					<div class='login'>
 						<form action="/scheduler-app/index.php/Default_Controller/homePage" method="POST">
 							<div >
 								<label>Username :</label>
@@ -37,9 +40,12 @@
 								<input id='txtPassword' type='password' value='' name='txtPassword'/>
 
 							</div>
+							<div>
+								<input id='btnSubmit' type='submit' value='Login'/><input type='button' value='cancel'/>
+							</div>
 
-							<input id='btnSubmit' type='submit' value='Login'/>
-							<input type='button' value='cancel'/>
+							
+							
 						</form>
 					</div>
 				</div>

@@ -19,7 +19,7 @@ body {
 }
 
 .content {
-	border:1px solid black;
+	border:0px solid black;
 	background-color:lightblue;
 	min-height: 500px;
 

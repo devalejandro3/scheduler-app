@@ -1,4 +1,14 @@
 
 .div_login {
-	margin-top:105px;
+	padding:74px;
+}
+
+.login_header h4{
+	border:3px solid green; padding:5px;height:58px;
+	background-color: green;
+	color:white;
+}
+
+.login div {
+	border:0px solid black; margin-bottom:3px; width:261px; text-align:right;
 }

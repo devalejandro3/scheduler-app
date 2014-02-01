@@ -25,7 +25,7 @@
 
 		<div class='content'> 
 
-			<div class='content_inner '  style="border:3px solid yellow;">
+			<div class='content_inner '  style="border:0px solid yellow;">
 
 				<div class='maintenance_header'>
 					<h4>User Maintenance</h4>
