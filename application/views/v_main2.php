@@ -6,7 +6,7 @@
 		<title> <?php echo $title ?> </title>
 		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/myStyles.css"/>
 		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/maintenance.css"/>
-		
+		<script></script>
 	</head>
 	<body>
 
@@ -14,7 +14,7 @@
 			<div class="header_inner">
 				
 				<div><?php $this->load->view( $header ) ?></div>
-				<div style="text-align:right;"><div>Welcome : <?php print_r($row)?></div><a href="/scheduler-app">	 Logout</a></div>
+				<div style="text-align:right;"><div>Welcome : <?php echo $row ?></div><a href="/scheduler-app">	 Logout</a></div>
 				
 			</div>
 		</div>
@@ -23,21 +23,36 @@
 			<div>HOME | MENU2 | MENU3 </div>
 		</div>
 
-		<div class='content'>
+		<div class='content'> 
 
-			<div class='content_inner maintenance'>
+			<div class='content_inner '  style="border:3px solid yellow;">
 
-				<div>
-					<h4>Maintenance</h4>
+				<div class='maintenance_header'>
+					<h4>User Maintenance</h4>
 				</div>
 
-				<div class=''>
+				<div class='maintenance'>
 
-					<form>
+					<form action="/scheduler-app/index.php/Default_Controller/insertValues" method="POST">
 
-						<div>Username : <input type="text" name="txtUsername"/></div>
-						<div>Password : <input type="text" name="txtPassword"/></div>
-						<div>Fullname : <input type="text" name="txtFullname"/></div>
+						<div >
+							<label for='txtUsername'>Username :</label> <input id='txtUsername' type='text' name='txtUsername'/>
+						</div>
+
+						<div >
+							<label for='txtPassword'>Password : </label>
+							<input id='txtPassword' type="password" name="txtPassword"/>
+						</div>
+
+						<div>
+							<label for='txtPassword2'>Verify Password : </label>
+							<input id='txtPassword2' type="password" />
+						</div>
+
+						<div >
+							<label for='txtFullname'>Fullname :</label> 
+							<input id='txtFullname' type="text" name="txtFullname"/>
+						</div>
 						<div><input type="submit" value="Save"/></div>
 
 

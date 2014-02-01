@@ -4,6 +4,17 @@ class M_Get_DB extends CI_Model{
 		$query = $this->db->query("select fullname from users where username = '". $user ."' and password = '". $password ."'");
 		$query->result();
 		$row = $query->row();
+
+
+		if($row == null){
+			return null;
+		}
 		return $row->fullname;
+	}
+
+	function insertUsers($data){
+		$this->db->insert("users", $data);
+
+	
 	}
 }

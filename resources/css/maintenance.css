@@ -1,6 +1,16 @@
 .maintenance{
-	width:auto;
-	padding-top:5px;
-	border:0px solid black;
+	padding:10px; border:1px solid green; witth:200px;
 
+
+}
+
+.maintenance_header h4{
+	border:3px solid green; padding:5px;height:58px;
+	background-color: green;
+	color:white;
+}
+
+
+.maintenance div {
+	border:0px solid black; margin-bottom:3px; width:261px; text-align:right;
 }

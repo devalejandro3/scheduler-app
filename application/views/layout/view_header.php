@@ -1,5 +1,5 @@
 <div id="header_inner">
 
-	<h1>ONLINE SCHEDULER SYSTEM JOAN PANGET :)</h1>
+	<h1>ONLINE SCHEDULER SYSTEM v1.0</h1>
 
 </div>

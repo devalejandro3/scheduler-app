@@ -10,6 +10,22 @@ class Default_Controller extends CI_Controller {
        parent::__construct();       
    }
 
+   function insertValues(){
+
+   		$user = @$_POST['txtUsername'];
+   		$password = @$_POST['txtPassword'];
+   		$fullname = @$_POST['txtFullname'];
+
+   		$this->load->model('m_get_db');
+   		$newRow = array("id"=>null, 
+   			"username" => $user,
+   			"password"=>$password,
+   			"fullname"=>$fullname);
+
+   		$this->m_get_db->insertUsers($newRow);
+   		echo "it has been added. <a href='http://localhost/scheduler-app/index.php/Default_Controller/homePage'>Return</a>";
+   }
+
    function homePage(){
    		$data['title'] = 'Main View Title';
 		$data['name'] = $this->name;
@@ -19,15 +35,30 @@ class Default_Controller extends CI_Controller {
 		$u =  @$_POST['txtUsername'];
 		$p =  @$_POST['txtPassword'];
 
-		$data['row'] = $this->getUsers($u, $p );
-
-
 
 		$data['header'] = 'layout/view_header';
 		$data['menu'] = 'layout/view_menu';
 		$data['footer'] = 'layout/view_footer';
 
-		$this->load->view('v_Main2', $data);
+
+		if($this->getUsers($u, $p ) != null){
+			$data['row'] = $this->getUsers($u, $p );
+			$this->load->view('v_Main2', $data);
+		} else {
+			$this->load->view('v_Main', $data);
+		}
+
+		
+
+		// how to determine if row is empty
+
+
+
+
+	
+
+
+		
    }
 
    function getUsers($u, $p){

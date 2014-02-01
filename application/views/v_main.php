@@ -1,11 +1,15 @@
  <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" type="text/css" href="view/myStyle.css">
+	
 		<meta charset="utf-8">
 		<title> <?php echo $title ?> </title>
+	
 		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/myStyles.css"/>
-		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/login.css"/>
+		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.js"></script>
+		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.min.js"></script>
+		<script  src="/scheduler-app/resources/javascript/login.js"></script>
+
 
 	</head>
 	<body style="width:980px; margin-left:auto; margin-right:auto;">
@@ -24,17 +28,17 @@
 						<form action="/scheduler-app/index.php/Default_Controller/homePage" method="POST">
 							<div >
 								<label>Username :</label>
-								<input type='text' value='' name='txtUsername'/>
+								<input id='txtUsername' type='text' value='' name='txtUsername'/>
 
 
 							</div>
 							<div>
 								<label>Password :</label>
-								<input type='password' value='' name='txtPassword'/>
+								<input id='txtPassword' type='password' value='' name='txtPassword'/>
 
 							</div>
 
-							<input type='submit' value='Login'/>
+							<input id='btnSubmit' type='submit' value='Login'/>
 							<input type='button' value='cancel'/>
 						</form>
 					</div>
