@@ -4,8 +4,8 @@
 		
 		<meta charset="utf-8">
 		<title> <?php echo $title ?> </title>
-		<link rel="stylesheet" type="text/css" href="/app/resources/css/myStyles.css"/>
-		<link rel="stylesheet" type="text/css" href="/app/resources/css/maintenance.css"/>
+		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/myStyles.css"/>
+		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/maintenance.css"/>
 		
 	</head>
 	<body>
