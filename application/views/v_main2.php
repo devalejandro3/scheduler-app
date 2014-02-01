@@ -14,7 +14,7 @@
 			<div class="header_inner">
 				
 				<div><?php $this->load->view( $header ) ?></div>
-				<div style="text-align:right;"><div>Welcome : <?php print_r($row)?></div><a href="/app">	 Logout</a></div>
+				<div style="text-align:right;"><div>Welcome : <?php print_r($row)?></div><a href="/scheduler-app">	 Logout</a></div>
 				
 			</div>
 		</div>
