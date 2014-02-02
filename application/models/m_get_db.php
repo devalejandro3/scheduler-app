@@ -33,4 +33,15 @@ class M_Get_DB extends CI_Model
 
 	
 	}
+
+	function editUsers($data,$USERID){
+		$this->db->update("users", $data, "id = ".$USERID);
+
+	}
+
+	function deleteUser($data ){
+		$this->db->update("users", $data, "id = 1");
+
+	}
+
 }

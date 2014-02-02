@@ -7,9 +7,11 @@
 	
 		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/myStyles.css"/>
 		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/login.css"/>
+
 		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.js"></script>
 		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.min.js"></script>
 		<script  src="/scheduler-app/resources/javascript/login.js"></script>
+
 
 
 
@@ -33,6 +35,8 @@
 							<div >
 								<label>Username :</label>
 								<input id='txtUsername' type='text' value='' name='txtUsername'/>
+
+
 							</div>
 							<div>
 								<label>Password :</label>
