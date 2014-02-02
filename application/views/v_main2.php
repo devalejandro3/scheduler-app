@@ -6,6 +6,9 @@
 		<title> <?php echo $title ?> </title>
 		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/myStyles.css"/>
 		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/maintenance.css"/>
+		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.js"></script>
+		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.min.js"></script>
+		<script  src="/scheduler-app/resources/javascript/login.js"></script>
 		<script></script>
 	</head>
 	<body>
@@ -33,7 +36,7 @@
 
 				<div class='maintenance'>
 
-					<form action="/scheduler-app/index.php/Default_Controller/insertValues" method="POST">
+					<form action="/scheduler-app/index.php/Default_Controller/insertValues"  method="POST" id="Data">
 
 						<div >
 							<label for='txtUsername'>Username :</label> <input id='txtUsername' type='text' name='txtUsername'/>
@@ -53,10 +56,21 @@
 							<label for='txtFullname'>Fullname :</label> 
 							<input id='txtFullname' type="text" name="txtFullname"/>
 						</div>
-						<div><input type="submit" value="Save"/></div>
+						<div><input type="submit" value="Save"/>
+							<input id='btnEdit' type="button" value="Edit"/>
+							<input type="button" value="Close"/>
+						</div>
+
 
 
 					</form>
+				</div>
+				<div>
+					<table border=1>
+						<?php echo $listOfUsers; ?>
+					</table>
+
+
 				</div>
 			</div>		
 

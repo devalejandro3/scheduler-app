@@ -39,10 +39,12 @@ class Default_Controller extends CI_Controller {
 		$data['header'] = 'layout/view_header';
 		$data['menu'] = 'layout/view_menu';
 		$data['footer'] = 'layout/view_footer';
+		$data['listOfUsers'] = $this->function2();
 
 
 		if($this->getUsers($u, $p ) != null){
 			$data['row'] = $this->getUsers($u, $p );
+			
 			$this->load->view('v_Main2', $data);
 		} else {
 			$this->load->view('v_Main', $data);
@@ -68,6 +70,8 @@ class Default_Controller extends CI_Controller {
 
 
 
+
+
 	public function index(){
 
 		$data['title'] = 'Main View Title';
@@ -89,12 +93,26 @@ class Default_Controller extends CI_Controller {
 	
 
 	function function1(){
-		return "function1";
+		echo "Success";
+		//PHP HERE
+		exit();
 
 	}
 
 	function function2(){
-		return "function2";
+		$this->load->model('m_get_db');
+		$result = $this->m_get_db->getAllUsers();
+
+			$xxx = "";
+			
+			foreach($result as $test){
+				
+				$xxx .="<tr class = 'lvwUserMaintenance' id = ".$test->id."> <td >" . $test->id ."</td> <td>". $test->username ."</td> <td>" .$test->fullname ."</tr>";
+
+			}	
+
+
+		return $xxx;
 		
 	}
 

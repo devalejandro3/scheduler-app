@@ -1,6 +1,7 @@
 
 .div_login {
 	padding:74px;
+
 }
 
 .login_header h4{
@@ -11,4 +12,9 @@
 
 .login div {
 	border:0px solid black; margin-bottom:3px; width:261px; text-align:right;
+}
+
+.login {
+	border:1px solid green;
+	padding:10px;
 }

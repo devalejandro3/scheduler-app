@@ -12,6 +12,7 @@
 		<script  src="/scheduler-app/resources/javascript/login.js"></script>
 
 
+
 	</head>
 	<body style="width:980px; margin-left:auto; margin-right:auto;">
 
@@ -32,8 +33,6 @@
 							<div >
 								<label>Username :</label>
 								<input id='txtUsername' type='text' value='' name='txtUsername'/>
-
-
 							</div>
 							<div>
 								<label>Password :</label>
