@@ -107,7 +107,7 @@ class Default_Controller extends CI_Controller {
 			
 			foreach($result as $test){
 				
-				$xxx .="<tr class = 'lvwUserMaintenance' id = ".$test->id."> <td >" . $test->id ."</td> <td>". $test->username ."</td> <td>" .$test->fullname ."</tr>";
+				$xxx .="<tr class = 'lvwUserMaintenance' id = ".$test->id." name= ".$test->id."><input type='text' name='idrow".$test->id."' id='idrow".$test->id."' value = ".$test->username."> <td >" . $test->id ."</td> <td>". $test->username ."</td> <td>" .$test->fullname ."</tr>";
 
 			}	
 

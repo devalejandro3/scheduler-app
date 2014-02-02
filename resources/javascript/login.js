@@ -34,7 +34,7 @@ LOGIN_VALIDATION.init = function(){
 	$('.lvwUserMaintenance').click(function(){
 		var id = this.id
 		var name = this.name	
-		lvwClick(id,name);
+		lvwClick(id);
 	})
 
 	
@@ -79,8 +79,11 @@ function btnEdit()
 
 }
 
-function lvwClick(id,name){
-	alert(name);
-	$('#txtUsername').val(name);
+function lvwClick(id){
+	var all = $('#Data').serialize();
+	var name = "idrow" + id;
+	
+	alert(all);
+	
 
 }

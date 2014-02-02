@@ -63,13 +63,13 @@
 
 
 
-					</form>
+					
 				</div>
 				<div>
 					<table border=1>
 						<?php echo $listOfUsers; ?>
 					</table>
-
+					</form>
 
 				</div>
 			</div>		
