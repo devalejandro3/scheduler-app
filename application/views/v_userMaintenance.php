@@ -25,7 +25,7 @@
 		</div>
 
 		<div class="menu_bar">
-			<div>HOME | <a href="/scheduler-app/index.php/Default_Controller/homePage">User Maintenance</a> | <a href="/scheduler-app/index.php/DepartmentController/werd">Department Maintenance</a> </div>
+			<div> <a href="/scheduler-app/index.php/Default_Controller/homePage">Home</a> | User Maintenance | <a href="/scheduler-app/index.php/DepartmentController/werd">Department Maintenance</a> </div>
 		</div>
 
 		<div class='content'> 

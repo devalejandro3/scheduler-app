@@ -23,14 +23,66 @@
 		</div>
 
 		<div class="menu_bar">
-				<div>HOME | <a href="/scheduler-app/index.php/Default_Controller/homePage">User Maintenance</a> | <a href="/scheduler-app/index.php/DepartmentController/werd">Department Maintenance</a> </div>
+				<div><a href="/scheduler-app/index.php/Default_Controller/homePage">Home</a> | <a href="/scheduler-app/index.php/Default_Controller/userMaintenance">User Maintenance</a> | Department Maintenance </div>
 		
 		</div>
 
 		<div class='content'> 
 
 			<div class='content_inner '  style="border:0px solid yellow;">
+					<div class='content_inner '  style="border:0px solid yellow;">
 
+				<div class='maintenance_header'>
+					<h4>Department Maintenance</h4>
+				</div>
+				<form action="/scheduler-app/index.php/Default_Controller/insertValues"  method="POST" id="Data">
+					<div class='maintenance'>
+
+						
+
+							<div >
+								<label for='txtUsername'>Username :</label> <input id='txtUsername' type='text' name='txtUsername'/>
+								<input id='UserID' type='hidden' value='' name='UserID'/>
+							</div>
+
+							<div >
+								<label for='txtPassword'>Password : </label>
+								<input id='txtPassword' type="password" name="txtPassword"/>
+							</div>
+
+							<div>
+								<label for='txtPassword2'>Verify Password : </label>
+								<input id='txtPassword2' type="password" />
+							</div>
+
+							<div >
+								<label for='txtFullname'>Fullname :</label> 
+								<input id='txtFullname' type="text" name="txtFullname"/>
+							</div>
+							<div><input type="submit" value="Save"/>
+								<input id='btnEdit' type="button" value="Edit"/>
+								<input type="button" value="Close"/>
+							</div>
+
+
+
+						
+					</div>
+					<div>
+						<table border=1 style="width:441px;">
+							<tr><th>Id</th><th>Username</th><th>Fullname</th><th></th></tr>
+				
+						</table>
+
+						<script>
+
+
+						</script>
+					
+					</div>
+				</form>
+
+			</div>		
 			</div>		
 
 		</div>

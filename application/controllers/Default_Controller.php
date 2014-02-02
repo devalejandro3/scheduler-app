@@ -20,7 +20,7 @@ class Default_Controller extends CI_Controller {
 
   			$data['header'] = "layout/view_header";
 		
-		$this->load->view('v_Main', $data);
+		$this->load->view('v_login', $data);
    }
 
    function insertValues(){
@@ -71,14 +71,51 @@ class Default_Controller extends CI_Controller {
 			
 
 			
-			$this->load->view('v_Main2', $data);
+			$this->load->view('v_homepage', $data);
 		} else {
-			$this->load->view('v_Main', $data);
+			$this->load->view('v_login', $data);
 		}
 
 		
 
 		// how to determine if row is empty
+   }
+
+   function userMaintenance(){
+   		$data['title'] = 'Main View Title';
+		$data['name'] = $this->name;
+		$data['color'] = $this->color;
+
+		$u =  @$_POST['txtUsername'];
+		$p =  @$_POST['txtPassword'];	
+
+		$data['header'] = 'layout/view_header';
+		$data['menu'] = 'layout/view_menu';
+		$data['footer'] = 'layout/view_footer';
+		$data['listOfUsers'] = $this->listOfUsers();
+
+
+		if($this->getUsers($u, $p ) != null || isset($_SESSION['username'])){
+
+			if(isset($_SESSION['username'])){
+				$u  = $_SESSION['username'];
+				$f  = $_SESSION['fullname'];
+
+				
+			} else {
+				$data['row'] = $this->getUsers($u, $p );
+				$_SESSION['username']= $u;
+				$_SESSION['fullname']=$data['row'];
+			}
+			
+
+			
+
+			
+			$this->load->view('v_userMaintenance', $data);
+		} else {
+			$this->load->view('v_login', $data);
+		}
    }
 
    function getUsers($u, $p)
@@ -108,7 +145,7 @@ class Default_Controller extends CI_Controller {
 		$data['menu'] = 'layout/view_menu';
 		$data['footer'] = 'layout/view_footer';
 
-		$this->load->view('v_Main', $data);
+		$this->load->view('v_homepage', $data);
 	}
 
 	
@@ -151,8 +188,8 @@ class Default_Controller extends CI_Controller {
 				<input type='hidden' name='a".$test->id."' id='a".$test->id."' value = ".$test->username.">
 				<input type='hidden' name='f".$test->id."' id='f".$test->id."' value = ".$test->fullname.">
 				<td  class = 'lvwUserMaintenance' id = ".$test->id." name= ".$test->id.">" . $test->id 
-				."</td> <td  class = 'lvwUserMaintenance' id = ".$test->id." name= ".$test->id.">". $test->username 
-				."</td> <td  class = 'lvwUserMaintenance' id = ".$test->id." name= ".$test->id.">" .$test->fullname ." </td> 
+				."</td> <td  class = 'lvwUserMaintenance' id = ".$test->id." >". $test->username 
+				."</td> <td  class = 'lvwUserMaintenance' id = ".$test->id." >" .$test->fullname ." </td> 
 				<td><input type='button' value='Delete' class='delUser' id=".$test->id."></td></tr>";
 
 				}	
