@@ -79,7 +79,7 @@ function btnEdit()
 		 
 			if(rs != null)
 			{
-				location = "/scheduler-app/index.php/Default_Controller/homePage";
+				location = "/scheduler-app/index.php/Default_Controller/userMaintenance";
 			}
 			else
 			{
@@ -126,7 +126,7 @@ function btnDelete(id)
 			  {
 				if(rs != null)
 				{
-					location = "/scheduler-app/index.php/Default_Controller/homePage";
+					location = "/scheduler-app/index.php/Default_Controller/userMaintenance";
 				}
 				else
 				{

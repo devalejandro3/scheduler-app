@@ -197,35 +197,19 @@ class Default_Controller extends CI_Controller {
 				$xxx .= "<td style='text-align:center' colspan='4'>No Result Found" 
 				."</td>";
 			}
-			
-
-
 		return $xxx;
-		
 	}
 
 
 	function deleteUser() {
 		$this->load->model("m_get_db");
-
-
-
-		
 		$hiddenID	= @$_POST['UserID'];
-
-		
-
-
 		 $newRow = array(
 		 "ISDELETED" => "Y"
 		 );
-
 		 $this->m_get_db->deleteUser($newRow,$hiddenID);
-
 		 return "Nabura ba?";
 	}
-
-
 }
 
 /* End of file welcome.php */

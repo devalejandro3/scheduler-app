@@ -6,10 +6,12 @@
 		<title> <?php echo $title ?> </title>
 		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/myStyles.css"/>
 		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/maintenance.css"/>
+		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/jquery-ui/jquery-ui.css">
 		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.js"></script>
 		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.min.js"></script>
+		<script  src="/scheduler-app/resources/jquery/jquery-ui/jquery-ui.js"></script>
 		<script  src="/scheduler-app/resources/javascript/login.js"></script>
-		<script></script>
+		<script  src="/scheduler-app/resources/javascript/jquery-ui-menu.js"></script>
 	</head>
 	<body>	
 
@@ -24,9 +26,13 @@
 			</div>
 		</div>
 
+
 		<div class="menu_bar">
-			<div> <a href="/scheduler-app/index.php/Default_Controller/homePage">Home</a> | User Maintenance | <a href="/scheduler-app/index.php/DepartmentController/werd">Department Maintenance</a> </div>
+
+				<div><?php $this->load->view( $menu ) ?></div>
+
 		</div>
+		
 
 		<div class='content'> 
 
@@ -63,10 +69,6 @@
 								<input id='btnEdit' type="button" value="Edit"/>
 								<input type="button" value="Close"/>
 							</div>
-
-
-
-						
 					</div>
 					<div>
 						<table border=1 style="width:441px;">

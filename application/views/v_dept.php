@@ -6,9 +6,12 @@
 		<title> <?php echo $title ?> </title>
 		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/myStyles.css"/>
 		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/maintenance.css"/>
+		<link rel="stylesheet" type="text/css" href="/scheduler-app/resources/css/jquery-ui/jquery-ui.css">
 		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.js"></script>
 		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.min.js"></script>
+		<script  src="/scheduler-app/resources/jquery/jquery-ui/jquery-ui.js"></script>
 		<script  src="/scheduler-app/resources/javascript/login.js"></script>
+		<script  src="/scheduler-app/resources/javascript/jquery-ui-menu.js"></script>
 		<script></script>
 	</head>
 	<body>
@@ -23,9 +26,11 @@
 		</div>
 
 		<div class="menu_bar">
-				<div><a href="/scheduler-app/index.php/Default_Controller/homePage">Home</a> | <a href="/scheduler-app/index.php/Default_Controller/userMaintenance">User Maintenance</a> | Department Maintenance </div>
-		
+
+				<div><?php $this->load->view( $menu ) ?></div>
+				
 		</div>
+
 
 		<div class='content'> 
 
