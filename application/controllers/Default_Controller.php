@@ -36,36 +36,25 @@ class Default_Controller extends CI_Controller {
    			"fullname"=>$fullname);
 
    		$this->m_get_db->insertUsers($newRow);
-   		echo "it has been added. <a href='http://localhost:86/scheduler-app/index.php/Default_Controller/homePage'>Return</a>";
+   		echo "it has been added. <a href='/scheduler-app/index.php/Default_Controller/homePage'>Return</a>";
    }
 
    function homePage(){
 
-   		
-   		
-
-
-
-
    		$data['title'] = 'Main View Title';
 		$data['name'] = $this->name;
 		$data['color'] = $this->color;
-		
 
 		$u =  @$_POST['txtUsername'];
-		$p =  @$_POST['txtPassword'];
-
+		$p =  @$_POST['txtPassword'];	
 
 		$data['header'] = 'layout/view_header';
 		$data['menu'] = 'layout/view_menu';
 		$data['footer'] = 'layout/view_footer';
-		$data['listOfUsers'] = $this->function2();
+		$data['listOfUsers'] = $this->listOfUsers();
 
 
 		if($this->getUsers($u, $p ) != null || isset($_SESSION['username'])){
-
-
-
 
 			if(isset($_SESSION['username'])){
 				$u  = $_SESSION['username'];
@@ -149,13 +138,14 @@ class Default_Controller extends CI_Controller {
 		 
 	}
 
-	function function2(){
+	function listOfUsers(){
+		$userNames 	= (isset($_SESSION['username']) ? $_SESSION['username'] : @$_POST['txtUsername']);
 		$this->load->model('m_get_db');
-		$result = $this->m_get_db->getAllUsers();
+		$result = $this->m_get_db->getAllUsers($userNames);
 
 			$xxx = "";
-			
-			foreach($result as $test){
+			if($result != null){
+				foreach($result as $test){
 				
 				$xxx .="<tr>
 				<input type='hidden' name='a".$test->id."' id='a".$test->id."' value = ".$test->username.">
@@ -165,7 +155,12 @@ class Default_Controller extends CI_Controller {
 				."</td> <td  class = 'lvwUserMaintenance' id = ".$test->id." name= ".$test->id.">" .$test->fullname ." </td> 
 				<td><input type='button' value='Delete' class='delUser' id=".$test->id."></td></tr>";
 
-			}	
+				}	
+			} else {
+				$xxx .= "<td style='text-align:center' colspan='4'>No Result Found" 
+				."</td>";
+			}
+			
 
 
 		return $xxx;
@@ -175,9 +170,13 @@ class Default_Controller extends CI_Controller {
 
 	function deleteUser() {
 		$this->load->model("m_get_db");
+
+
+
 		
 		$hiddenID	= @$_POST['UserID'];
 
+		
 
 
 		 $newRow = array(
@@ -186,7 +185,7 @@ class Default_Controller extends CI_Controller {
 
 		 $this->m_get_db->deleteUser($newRow,$hiddenID);
 
-		 return $this->m_get_db->deleteUser($newRow,$hiddenID);;
+		 return "Nabura ba?";
 	}
 
 

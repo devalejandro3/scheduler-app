@@ -18,7 +18,7 @@ var LOGIN_VALIDATION = {};
 
 
 LOGIN_VALIDATION.alerts = function(){
-	alert();
+
 }
 
 LOGIN_VALIDATION.init = function(){
@@ -64,7 +64,8 @@ LOGIN_VALIDATION.test = function(){
 function btnEdit()
 {
 	var all = $('#Data').serialize();
-	alert(all);
+	
+
 	var url = "/scheduler-app/index.php/Default_Controller/UpdateMaintenance";
 	
 	$.ajax
@@ -74,7 +75,8 @@ function btnEdit()
 		  data 		: all,
 		  success	: function(rs)
 		  {
-		  	alert(rs);
+		 
+		 
 			if(rs != null)
 			{
 				location = "/scheduler-app/index.php/Default_Controller/homePage";
@@ -113,7 +115,7 @@ function btnDelete(id)
 {
 
 	var url = "/scheduler-app/index.php/Default_Controller/deleteUser";
-	if (confirm ("Are you sure you want to delete this record?"))
+	if (confirm ("Are you sure you want to delete this record?"));
 	{
 	    $.ajax
 		({
@@ -122,7 +124,6 @@ function btnDelete(id)
 			  data 		: $('#Data').serialize(),
 			  success	: function(rs)
 			  {
-			  	alert(rs);
 				if(rs != null)
 				{
 					location = "/scheduler-app/index.php/Default_Controller/homePage";
