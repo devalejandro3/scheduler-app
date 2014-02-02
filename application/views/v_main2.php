@@ -42,7 +42,7 @@
 
 							<div >
 								<label for='txtUsername'>Username :</label> <input id='txtUsername' type='text' name='txtUsername'/>
-								<input id='UserID' type='text' value='' name='UserID'/>
+								<input id='UserID' type='hidden' value='' name='UserID'/>
 							</div>
 
 							<div >
