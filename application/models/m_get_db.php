@@ -22,7 +22,7 @@ class M_Get_DB extends CI_Model
 	    $this->db->from('users');
 	    $this->db->where('isdeleted', 'N');
 	    $this->db->where('username !=', $userNames);
-	
+
 	    $q = $this->db->get();
 
 	    if($q->num_rows() > 0) 

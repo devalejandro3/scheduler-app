@@ -67,10 +67,6 @@ class Default_Controller extends CI_Controller {
 				$_SESSION['fullname']=$data['row'];
 			}
 			
-
-			
-
-			
 			$this->load->view('v_homepage', $data);
 		} else {
 			$this->load->view('v_login', $data);
@@ -151,28 +147,17 @@ class Default_Controller extends CI_Controller {
 	
 
 	function UpdateMaintenance(){
-		 $this->load->model("m_get_db");
-		
-	  //$this->m_get_db->editUsers($data);
-
+		$this->load->model("m_crud");
 		$userNames 	= @$_POST['txtUsername'];
 		$fname 		= @$_POST['txtFullname'];
 		$pass 		= @$_POST['txtPassword'];
 		$hiddenID	= @$_POST['UserID'];
-
-
-
 		 $newRow = array(
-
 		 "username" => $userNames,
 		 "fullname" => $fname,
 		 "password" => $pass
 		 );
-
-		 $this->m_get_db->editUsers($newRow,$hiddenID);
-
-		
-		 
+		 $this->m_crud->updateRow('users',$newRow,'id',$hiddenID);
 	}
 
 	function listOfUsers(){

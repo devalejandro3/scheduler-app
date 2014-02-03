@@ -13,8 +13,6 @@
 		<script  src="/scheduler-app/resources/javascript/login.js"></script>
 
 
-
-
 	</head>
 	<body style="width:980px; margin-left:auto; margin-right:auto;">
 
@@ -26,7 +24,7 @@
 
 				
 				<div class="content_inner div_login">
-
+					Yverdon de Pestallozi School
 					<div class='login_header'>
 						<h4>Login Page</h4>
 					</div>
@@ -55,8 +53,11 @@
 			</div>
 
 			<div id="footer">
+				<div class="footer_inner">
+					<div>LOGIN PAGE FOOTER</div>
+				</div>
 
-			<!--	<?php $this->load->view( $footer ) ?> -->
+			
 			</div>
 
 			

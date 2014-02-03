@@ -1,16 +1,36 @@
+/*
+	Classes
+*/
 .maintenance{
-	padding:10px; border:1px solid green; witth:200px;
-
-
+	border:2px solid green; 
+	padding:10px;
+	width:447px;
 }
 
-.maintenance_header h4{
-	border:3px solid green; padding:5px;height:58px;
+
+.maintenance_header{
 	background-color: green;
+	border:3px solid green;
+	height:58px;
+	width:450px;
+	height:58px;
 	color:white;
+	padding-left:15px;
+}
+
+.buttons_div {
+	padding-top:8px;
 }
 
 
+/*
+	Classes with 
+*/
 .maintenance div {
-	border:0px solid black; margin-bottom:3px; width:270px; text-align:right;
+	border:0px solid black; 
+	margin-bottom:3px; 
+	width:275px; 
+	text-align:right;
+	
 }
+
