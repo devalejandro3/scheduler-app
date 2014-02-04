@@ -141,7 +141,7 @@ class Default_Controller extends CI_Controller {
 		$data['menu'] = 'layout/view_menu';
 		$data['footer'] = 'layout/view_footer';
 
-		$this->load->view('v_homepage', $data);
+		$this->load->view('v_login', $data);
 	}
 
 	
