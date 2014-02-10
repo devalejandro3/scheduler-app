@@ -41,8 +41,8 @@
 
 		<div class='content'> 
 
-			<div class='content_inner '  style="border:0px solid yellow;">
-				<h1>DASHBored</h1>
+			<div class='content_inner '  style="border:0px solid yellow; padding-left:10px ">
+				<h1> Yverdon de Pestallozi School</h1>
 			</div>		
 
 		</div>

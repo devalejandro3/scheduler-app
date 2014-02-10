@@ -11,7 +11,7 @@
 		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.js"></script>
 		<script  src="/scheduler-app/resources/jquery/jquery-2.1.0.min.js"></script>
 		<script  src="/scheduler-app/resources/jquery/jquery-ui/jquery-ui.js"></script>
-		<script  src="/scheduler-app/resources/javascript/school-year.js"></script>
+		<script  src="/scheduler-app/resources/javascript/user.js"></script>
 		<script  src="/scheduler-app/resources/javascript/jquery-ui-menu.js"></script>
 	</head>
 	<body>
@@ -35,20 +35,20 @@
 			<div class='content_inner'>
 
 				<div class='maintenance_header'>
-					<h4>School Year Maintenance</h4>
+					<h4>User Maintenance</h4>
 				</div>
 
 				<form action="/scheduler-app/index.php/Default_Controller/insertValues"  method="POST" id="Data">
 					<div class='maintenance'>
 						
 					
-						<div id='schoolYearTable'>
-							<?php echo $this->load->view($content,$schoolYearList) ?>
+						<div id='usersTable'>
+							<?php echo $this->load->view($content,$usersList) ?>
 						</div>							
 					</div>
 
 				</form>
-				<button id="createSchoolyear">Add New School Year</button>
+				<button id="create-users">Add New User</button>
 			</div>		
 
 		</div>
@@ -61,29 +61,31 @@
 
 
 			<!-- DIALOG-->
-			<div id="dialog-form" title="Add New School-Year">
+			<div id="dialog-form" title="Add New User">
 				<p class="validateTips">All form fields are required.</p>
-				<form id='addSchoolYear' method='POST'>
+				<form id='addUsers' method='POST'>
 				<fieldset>
 					
-					<label for="name">School-Year</label>
-					<input type="text" name="txtSchoolYear" id="name" class="text ui-widget-content ui-corner-all">
-					<label for="email">Remarks</label>
-					<input type="text" name="txtRemarks"  value="" class="text ui-widget-content ui-corner-all">
+					<label for="name">Username</label>
+					<input type="text" name="txtUsername" id="name" class="text ui-widget-content ui-corner-all">
+					<label for="email">Fullname</label>
+					<input type="text" name="txtFullname"  value="" class="text ui-widget-content ui-corner-all">
 				</fieldset>
 				</form>
 			</div>
 
 
 
-			<div id="dialog-form-update" title="Update School-Year Info">
+			<div id="dialog-form-update" title="Update User Info">
 				<p class="validateTips">All form fields are required.</p>
-				<form id='updateSchoolYear' method='POST'>
-				<fieldset>					
-					<label for="name">School-Year</label>
-					<input type="text" name="txtSchoolYear" id="name" class="text ui-widget-content ui-corner-all">
-					<label for="email">Remarks</label>
-					<input type="text" name="txtRemarks"  value="" class="text ui-widget-content ui-corner-all">
+				<form id='updateUsers' method='POST'>
+				<fieldset>
+					<label id='departmentLbl' for="department">User</label>
+					
+					<label for="name">Username</label>
+					<input type="text" name="txtUsername" id="name" class="text ui-widget-content ui-corner-all">
+					<label for="email">Fullname</label>
+					<input type="text" name="txtFullname"  value="" class="text ui-widget-content ui-corner-all">
 				</fieldset>
 				</form>
 			</div>

@@ -46,7 +46,7 @@
 				
 					<div class='maintenance'>
 						
-
+<!-- 
 							<div >
 								<label for='txtUsername'>Username :</label> <input id='txtUsername' type='text' name='txtUsername'/>
 								<input id='UserID' type='hidden' value='' name='UserID'/>
@@ -69,7 +69,7 @@
 							<div class='buttons_div'><input type="submit" value="Save"/>
 								<input id='btnEdit' type="button" value="Edit"/>
 								<input type="button" value="Close"/>
-							</div>
+							</div> -->
 					</div>
 
 					<div style="padding-top:16px;">
@@ -78,7 +78,7 @@
 								<tr>
 									<td>Id</td><td>Username</td><td>Fullname</td><td></td>
 								</tr>
-								<?php echo $listOfUsers; ?>
+								
 							</tbody>
 						</table>
 					</div>

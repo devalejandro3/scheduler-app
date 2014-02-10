@@ -1,0 +1,22 @@
+Create
+
+	- add method()
+	
+
+Retrieve
+
+	- view All except valid = 0
+	
+	- view section by parameter
+	
+	- @Method : viewSectionTable($deptId)
+		to view all the record inside the table, 
+		First I fetched the record need, Using sql query I selected all the Section record by department.
+		Next I placed the html part to a separate file named sectionContent.php then I passed the fetched section.
+		Then it returned the completed html with record to view layer.
+
+Update
+
+	- update method();
+
+Delete

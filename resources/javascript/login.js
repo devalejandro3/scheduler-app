@@ -68,8 +68,7 @@ function btnEdit()
 
 	var url = "/scheduler-app/index.php/Default_Controller/UpdateMaintenance";
 	
-	$.ajax
-	({
+	$.ajax ({
 		  type		: "POST",
 		  url		: url,
 		  data 		: all,

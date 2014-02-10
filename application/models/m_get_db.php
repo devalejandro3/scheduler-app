@@ -3,7 +3,7 @@ class M_Get_DB extends CI_Model
 {
 	function getAll($user, $password)
 	{
-		$query = $this->db->query("select fullname from users where username = '". $user ."' and password = '". $password ."' and isdeleted='N'");
+		$query = $this->db->query("select fullname from users where username = '". $user ."' and password = '". $password ."' and valid='1'");
 		$query->result();
 		$row = $query->row();
 
@@ -20,7 +20,7 @@ class M_Get_DB extends CI_Model
 
 		$this->db->select("id, username, password, fullname");
 	    $this->db->from('users');
-	    $this->db->where('isdeleted', 'N');
+	    $this->db->where('valid', '1');
 	    $this->db->where('username !=', $userNames);
 
 	    $q = $this->db->get();

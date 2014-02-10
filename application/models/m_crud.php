@@ -18,22 +18,8 @@ class M_crud extends CI_Model{
 		Select * from table_name
 	*/
 	function retrieveAll($table){
-
-		// $query = $this->db->query("select * from " . $table . " WHERE  valid ='1'");
-		// $query->result();
-		// $row = $query->row();
-
-		// if($row == null) {
-		// 	return null;
-		// }
-		// return $row;
-		 $query = $this->db->select('*')->from($table)->get();
+		 $query = $this->db->select('*')->from($table)->where('valid',1)->get();
     return $query->result();
-	
-
-
-
-
 	}
 
 	/*

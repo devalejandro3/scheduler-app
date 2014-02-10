@@ -14,8 +14,8 @@
 	    <a href="#">Maintenance</a>
 	    <ul>
 	      <!-- <li class="ui-state-disabled"><a href="#">Section</a></li> -->
-	      <li><a href="/scheduler-app/index.php/Maintenance/DepartmentController/werd">Department</a></li>
-	       <li><a href="/scheduler-app/index.php/Default_Controller/userMaintenance">Users</a></li>
+	       <li><a href="/scheduler-app/index.php/Maintenance/DepartmentController/department">Department</a></li>
+	       <li><a href="/scheduler-app/index.php/Maintenance/UserController/users">Users</a></li>
 	       <li><a href="/scheduler-app/index.php/Maintenance/SchoolYearController/schoolyear">School Year</a></li>
 	       <li><a href="/scheduler-app/index.php/Maintenance/LevelController/level">Level</a></li>
 	       <li><a href="/scheduler-app/index.php/Maintenance/SectionController/section">Section</a></li>

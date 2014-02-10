@@ -14,7 +14,6 @@
 		<script  src="/scheduler-app/resources/javascript/login.js"></script>
 		<script  src="/scheduler-app/resources/javascript/section.js"></script>
 		<script  src="/scheduler-app/resources/javascript/jquery-ui-menu.js"></script>
-		
 	</head>
 	<body>
 
@@ -44,45 +43,28 @@
 					<div class='maintenance'>
 						
 						<div>
-							<label for='dwnDept'>Department :</label>
-							<select id='dwnDept'>
-
-								<option>Pre School Department</option>
-								<option>Elementary Department</option>
-								<option>High School Department</option>
-								<option>SPED Department</option>
-
-
+							<label for='dwnDept'>Section :</label>
+							<select id='dwnDept' >
+								<option>- Select -</option>
+								<option value='1'>Pre School Department</option>
+								<option value='2'>Elementary Department</option>
+								<option value=3>High School Department</option>
+								<option value='4'>SPED Department</option>
 							</select>
 						</div>
 					
-						<div>
-							<table id="users" class="CSSTableGenerator" style="width:441px;">
-								<tbody>
-									<tr class="ui-widget-header ">
-										<td>Id</td>
-										<td>Department</td>
-										<td>Section</td>
-										<td></td>
-									</tr>
-								
-								
-										<?php foreach($sectionList as $row): ?>
-											<tr> 
+						<div id='sectionTable'>
+							<!--
 
-											    <td><?php echo $row->id; ?></td>
-											    <td><?php echo $row->name; ?></td>
-											    <td><?php echo $row->description; ?></td>
-											    <td>X</td>
-											 </tr>
-										<?php endforeach; ?>
-								</tbody>
-							</table>
+								Section Table here . . . 
+								see SectionCOntent.php
+
+							 -->
 						</div>							
 					</div>
 
 				</form>
-				<button id="create-user">Create new user</button>
+				<button id="create-user">Create new section</button>
 			</div>		
 
 		</div>
@@ -99,6 +81,8 @@
 				<p class="validateTips">All form fields are required.</p>
 				<form id='addSection' method='POST'>
 				<fieldset>
+					<label id='departmentLbl' for="department">Department</label>
+					
 					<label for="name">Section Name</label>
 					<input type="text" name="txtName" id="name" class="text ui-widget-content ui-corner-all">
 					<label for="email">Description</label>
@@ -106,6 +90,25 @@
 				</fieldset>
 				</form>
 			</div>
+
+
+
+			<div id="dialog-form-update" title="Update Section">
+				<p class="validateTips">All form fields are required.</p>
+				<form id='updateSection' method='POST'>
+				<fieldset>
+				
+					<label for="name">Section Name</label>
+					<input type="text" name="txtName" id="name" class="text ui-widget-content ui-corner-all">
+					<label for="email">Description</label>
+					<input type="text" name="txtDescription"  value="" class="text ui-widget-content ui-corner-all">
+				</fieldset>
+				</form>
+			</div>
+
+
+
+
 		<!-- END OF DIALOG -->
 
 		
